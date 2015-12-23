@@ -2,9 +2,49 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="styles.css">
+	
+	<!-- Loaidng Angular-->
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 	<script type="text/javascript" src = "app.js"></script>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body ng-app="appName">
+
+	 <header>
+			<nav class="navbar navbar-default">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="/">AngularJS</a>
+				</div>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+				</ul>
+			</div>
+			</nav>
+		</header>
+
+	<div ng-controller ="ctrlName">
+		<label> What is your facebook ID??</label>
+		<input type = "text" ng-model = "typehere" placeholder ="Enter here!">
+		<div class ="alert alert-info" ng-show="typehere.length !== characters">
+			Must be 5 Characters
+		</div>
+
+
+		<div><a ng-href="facebook.com/{{ lowercase() }}">facebook.com/{{ lowercase() }}</a></div>
+
+		<div>
+			<h3>Rules</h3>
+			<ol>
+				<li ng-repeat ="rule in rules">
+					{{rule.ruleName}}
+				</li>
+			</ol>
+		</div>
+	</div>
 
 </body>
 </html>
